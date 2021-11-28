@@ -1,19 +1,19 @@
 #pragma once
 
-#include "eitem.h"
+#include "item.h"
 
 
-class eBoots : public eItem
+class eBoots : public Item
 {
 public:
-	eBoots(eRarity, int maxDurability, int speed);
+	eBoots(eRarity, int maxDurability, int defense);
 	virtual ~eBoots() = default;
 
-	virtual string	ToString()	const override;
-	virtual bool	IsValid()	const override { return eItem::IsValid() && speed > 0; }
+	virtual std::string	ToString()	const override;
+	virtual bool		IsValid()	const override { return Item::IsValid() && defense > 0; }
 
-	int		GetSpeed()	   const { return speed; }
-	void	SetSpeed(int _speed) { speed = _speed; }
+	int		GetDefense()			const { return defense; }
+	void	SetDefense(int _defense) { defense = _defense; }
 protected:
-	int speed = 0;
+	int defense = 0;
 };

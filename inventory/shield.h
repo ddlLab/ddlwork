@@ -1,19 +1,19 @@
 #pragma once
 
-#include "eitem.h"
+#include "item.h"
 
 
-class eShield : public eItem
+class eShield : public Item
 {
 public:
-	eShield(eRarity, int maxDurability, int damageResist);
+	eShield(eRarity, int maxDurability, int protection);
 	virtual ~eShield() = default;
 
-	virtual string	ToString()	const override;
-	virtual bool	IsValid()	const override { return eItem::IsValid() && damageResist > 0; }
+	virtual std::string	ToString()	const override;
+	virtual bool		IsValid()	const override { return Item::IsValid(); }
 
-	int		GetDamageResistance()	   const { return damageResist; }
-	void	SetDamageResistance(int _damageResist) { damageResist = _damageResist; }
+	int		GetProtection()			const { return protection; }
+	void	SetProtection(int _protection) { protection = _protection; }
 protected:
-	int damageResist = 0;
+	int protection = 0;
 };

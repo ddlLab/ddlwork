@@ -1,12 +1,11 @@
 #pragma once
-
 #include <string>
 
-using namespace std;
 
 class iItem
 {
 public:
+	virtual ~iItem() = default;
 	enum class eType
 	{
 		CHEST,
@@ -22,20 +21,18 @@ public:
 		COMMON,
 		RARE,
 		EPIC,
-		MYTHICAL,
-		LEGENDARY
+		LEGENDARY,
+		MYSTICAL
 	};
 public:
-	virtual ~iItem() = default;
+	virtual bool CanUse() const = 0;
+	virtual bool CanRepair() const = 0;
+	virtual bool IsBroken() const = 0;
+	virtual void Use() = 0;
+	virtual void Repair() = 0;
 
-	virtual bool	 CanUse()		const = 0;
-	virtual bool	 CanRepair()	const = 0;
-	virtual bool	 IsBroken()		const = 0;
-	virtual void	 Use()				  = 0;
-	virtual void	 Repair()		      = 0;
-
-	virtual string   ToString()	const = 0;
-	virtual bool     IsValid()	const = 0;
-	virtual eType    Type()		const = 0;
-	virtual eRarity  Rarity()	const = 0;
+	virtual std::string ToString() const = 0;
+	virtual bool IsValid() const = 0;
+	virtual eType Type() const = 0;
+	virtual eRarity Rarity() const = 0;
 };

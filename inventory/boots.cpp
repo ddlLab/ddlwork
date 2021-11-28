@@ -1,15 +1,15 @@
-#include "boots.h"
+#include "Boots.h"
 #include <sstream>
 
-eBoots::eBoots(eRarity _rarity, int _maxDurability, int _speed)
-	: eItem(eType::BOOTS, _rarity, _maxDurability)
-	, speed(_speed)
+eBoots::eBoots(eRarity _rarity, int _maxDurability, int _defense)
+	: Item(eType::BOOTS, _rarity, _maxDurability)
+	, defense(_defense)
 {}
 
 std::string eBoots::ToString() const
 {
 	std::ostringstream oss;
-	oss << eItem::ToString()
-		<< "Speed:" << speed << std::endl;
+	oss << Item::ToString()
+		<< "defense:" << defense << std::endl;
 	return oss.str();
 }
