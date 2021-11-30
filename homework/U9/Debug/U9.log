@@ -1,0 +1,19 @@
+﻿  factory_common.cpp
+C:\Users\Адмін\Downloads\U9 (1)\U9\factory_common.cpp(51,1): error C2511: 'iItem *FactoryCommon::Make(void)': overloaded member function not found in 'FactoryCommon'
+C:\Users\Адмін\Downloads\U9 (1)\U9\factory_common.h(4): message : see declaration of 'FactoryCommon'
+  factory_epic.cpp
+C:\Users\Адмін\Downloads\U9 (1)\U9\factory_epic.cpp(51,1): error C2511: 'iItem *FactoryEpic::Make(void)': overloaded member function not found in 'FactoryEpic'
+C:\Users\Адмін\Downloads\U9 (1)\U9\factory_epic.h(4): message : see declaration of 'FactoryEpic'
+  factory_legendary.cpp
+C:\Users\Адмін\Downloads\U9 (1)\U9\factory_legendary.cpp(52,1): error C2511: 'iItem *FactoryLegendary::Make(void)': overloaded member function not found in 'FactoryLegendary'
+C:\Users\Адмін\Downloads\U9 (1)\U9\factory_legendary.h(4): message : see declaration of 'FactoryLegendary'
+  factory_mystical.cpp
+C:\Users\Адмін\Downloads\U9 (1)\U9\factory_mystical.cpp(52,1): error C2511: 'iItem *FactoryMystical::Make(void)': overloaded member function not found in 'FactoryMystical'
+C:\Users\Адмін\Downloads\U9 (1)\U9\factory_mystical.h(4): message : see declaration of 'FactoryMystical'
+  U9.cpp
+C:\Users\Адмін\Downloads\U9 (1)\U9\U9.cpp(17,47): error C2661: 'AbstractFactory::Make': no overloaded function takes 0 arguments
+C:\Users\Адмін\Downloads\U9 (1)\U9\U9.cpp(18,47): error C2661: 'AbstractFactory::Make': no overloaded function takes 0 arguments
+C:\Users\Адмін\Downloads\U9 (1)\U9\U9.cpp(19,47): error C2661: 'AbstractFactory::Make': no overloaded function takes 0 arguments
+C:\Users\Адмін\Downloads\U9 (1)\U9\U9.cpp(20,47): error C2661: 'AbstractFactory::Make': no overloaded function takes 0 arguments
+C:\Users\Адмін\Downloads\U9 (1)\U9\U9.cpp(21,47): error C2661: 'AbstractFactory::Make': no overloaded function takes 0 arguments
+  Generating Code...
