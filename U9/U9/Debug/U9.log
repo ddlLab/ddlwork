@@ -1,0 +1,15 @@
+﻿  abstract_factory.cpp
+  boots.cpp
+  chest.cpp
+  eItem.cpp
+  factory_common.cpp
+  factory_epic.cpp
+  factory_legendary.cpp
+  factory_mythical.cpp
+  factory_rare.cpp
+  helm.cpp
+  shield.cpp
+  U9.cpp
+  weapon.cpp
+  Создание кода...
+  U9.vcxproj -> C:\Users\Yehor\source\repos\U9\Debug\U9.exe
