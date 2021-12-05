@@ -25,10 +25,13 @@
 *.la
 *.a
 *.lib
+*.log
 
 # Executables
 *.exe
 *.out
 *.app
 
+/inventory/.vs
 /inventory/U9.vcxproj.user
+/inventory/Debug

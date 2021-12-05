@@ -13,11 +13,11 @@ using namespace std;
 int main()
 {
     std::vector<iItem*>  inventory;
-    inventory.push_back(AbstractFactory::Make() );
-    inventory.push_back(AbstractFactory::Make() );
-    inventory.push_back(AbstractFactory::Make() );
-    inventory.push_back(AbstractFactory::Make() );
-    inventory.push_back(AbstractFactory::Make() );
+    inventory.push_back(AbstractFactory::MakeBoots() );
+    inventory.push_back(AbstractFactory::MakeBoots() );
+    inventory.push_back(AbstractFactory::MakeBoots() );
+    inventory.push_back(AbstractFactory::MakeBoots() );
+    inventory.push_back(AbstractFactory::MakeBoots() );
 
     for (iItem* item : inventory)
     {
