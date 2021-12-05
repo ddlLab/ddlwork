@@ -10,10 +10,11 @@ reset - откатывает удаляет изменения
 tag - подсказка
 
 branch - ветка 
-create branch
+create branch - создать ветку(локально)
 
-gitignore
+gitignore - файл с правилами игнорирования по проекту
 
 merge conflict
-cherry pick
+cherry pick - более тонкий вид мержа. перетаскивание конкретного
+ комита в другую ветку
 
