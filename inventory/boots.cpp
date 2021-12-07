@@ -7,7 +7,7 @@ eBoots::eBoots(eRarity _rarity, int _maxDurability, int _speed)
 {}
 
 std::string eBoots::ToString() const
-{
+{adfsf
 	std::ostringstream oss;
 	oss << eItem::ToString()
 		<< "Speed:" << speed << std::endl;
