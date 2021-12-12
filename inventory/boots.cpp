@@ -12,4 +12,5 @@ std::string eBoots::ToString() const
 	oss << eItem::ToString()
 		<< "Speed:" << speed << std::endl;
 	return oss.str();
+
 }
