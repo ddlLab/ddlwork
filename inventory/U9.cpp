@@ -13,18 +13,18 @@ using namespace std;
 int main()
 {
     std::vector<iItem*>  inventory;
-    inventory.push_back(AbstractFactory::Make() );
-    inventory.push_back(AbstractFactory::Make() );
-    inventory.push_back(AbstractFactory::Make() );
-    inventory.push_back(AbstractFactory::Make() );
-    inventory.push_back(AbstractFactory::Make() );
+    inventory.push_back(AbstractFactory::MakeBoots() );
+    inventory.push_back(AbstractFactory::MakeBoots() );
+    inventory.push_back(AbstractFactory::MakeBoots() );
+    inventory.push_back(AbstractFactory::MakeBoots() );
+    inventory.push_back(AbstractFactory::MakeBoots() );
 
     for (iItem* item : inventory)
     {
         cout << item->ToString() << endl;
     }
 
-    cout << "---------------------------\n";
+    cout << "----Test fetch----\n";
 
     sort(inventory.rbegin(), inventory.rend(), [](iItem* item1, iItem* item2)
         {
