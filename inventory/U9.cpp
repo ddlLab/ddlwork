@@ -24,7 +24,7 @@ int main()
         cout << item->ToString() << endl;
     }
 
-    cout << "---------------------------\n";
+    cout << "----Test fetch----\n";
 
     sort(inventory.rbegin(), inventory.rend(), [](iItem* item1, iItem* item2)
         {
