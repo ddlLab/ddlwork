@@ -11,6 +11,11 @@ public:
 	std::string ToString()const;
 
 		void push_front(int val);
+		void push_back(int val);
+		void pop__front();
+		void pop_back();
+		void pop_mid();
+		void push_mid(int val,size_t pos);
 
 
 private:
