@@ -11,6 +11,11 @@ public:
 	std::string ToString() const;
 
 	void push_front(int val);
+	void push_back(int val);
+	void push_mid(int val, size_t pos);
+
+void pop_front();
+void pop_back();
 private:
 	Node* head = nullptr;
 	Node* tail = nullptr;
