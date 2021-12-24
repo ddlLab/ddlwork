@@ -28,3 +28,90 @@ void OneLinkedList::push_front(int val)
 	}
 	++size;
 }
+
+void OneLinkedList::push_back(int val)
+{
+	if (size == 0)
+	{
+		head = new Node(val);
+		tail = head;
+	}
+	else
+	{
+		tail->Next() = new Node(val);
+		tail = tail->Next();
+	}
+	++size;
+}
+
+void OneLinkedList::push_mid(int val, size_t id)
+{
+	if (id == 0 || IsEmpty())
+	{
+		push_front(val);
+		return;
+	}
+
+	if (id >= size)
+	{
+		push_back(val);
+		return;
+	}
+	size_t k = 0;
+	Node* t = head;
+	while (k + 1 != id)
+	{
+		t = t->Next();
+		++k;
+	}
+	Node* t1 = t->Next();
+	t->Next() = new Node(val, t1);
+	++size;
+}
+
+void OneLinkedList::pop_front()
+{
+	if (size == 0)
+	{
+		return;
+	}
+	if (size == 1)
+	{
+		delete head;
+		head = tail = nullptr;
+	}
+	else
+	{
+		Node* t = head;
+		head = head->Next();
+		t->Next() = nullptr;
+		delete t;
+	}
+	--size;
+}
+
+void OneLinkedList::pop_back()
+{
+	if (size == 0)
+	{
+		return;
+	}
+	if (size == 1)
+	{
+		delete head;
+		head = tail = nullptr;
+	}
+	else
+	{
+		Node* t = head;
+		while (t->Next() != tail)
+		{
+			t = t->Next();
+		}
+		delete tail;
+		t->Next() = nullptr;
+		tail = t;
+	}
+	--size;
+}
+		
