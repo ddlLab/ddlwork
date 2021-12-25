@@ -70,6 +70,22 @@ void OneLinkedList::push_mid(int val, size_t pos)
 	size++;
 }
 
+void OneLinkedList::pop_mid(int val, size_t pos)
+{
+	if (size == 0)
+		return;
+
+	if (size == 1)
+	{
+		del = t->Next()
+			t = Next() = del->Next()
+			del->Next() = nullptr;
+	}
+	delete del;
+    
+size--;
+}
+
 void OneLinkedList::pop_front()
 {
 	if (size == 0)
