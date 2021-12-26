@@ -32,5 +32,8 @@
     <ClInclude Include="one_linked_list.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="book.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
