@@ -2,7 +2,6 @@
 
 #include <string>
 #include <sstream>
-#include "Book.h"
 
 template<class T>
 class Node
