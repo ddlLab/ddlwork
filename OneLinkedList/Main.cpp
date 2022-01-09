@@ -88,9 +88,9 @@ void test3()
 	std::cout << list.ToString() << std::endl;
 	list.push_back({ "Lev Tolstoy6", 1, 18 });
 	std::cout << list.ToString() << std::endl;
-	list.push_mid({ "Lev Tolstoy7", 2, 12 });
-	list.push_mid({ "Lev Tolstoy8", 3, 13 });
-	list.push_mid({ "Lev Tolstoy9", 4, 7 });
+	list.push_mid({ "Lev Tolstoy7", 2, 12 },0);
+	list.push_mid({ "Lev Tolstoy8", 3, 13 }, 3);
+	list.push_mid({ "Lev Tolstoy9", 4, 7 }, 10);
 	std::cout << list.ToString() << std::endl;
 
 	while (!list.IsEmpty())

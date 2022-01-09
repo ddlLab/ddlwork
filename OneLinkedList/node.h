@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <sstream>
-#include "book.h"
+
 template <class T>
 class Node
 {
@@ -37,14 +37,3 @@ std::string Node<T>::ToString() const
 	return oss.str();
 }
 
-template<>
-std::string Node<Book>::ToString() const
-{
-	std::ostringstream oss;
-	oss << data.ToString << " ";
-	if (!IsLast())
-	{
-		oss << next->ToString();
-	}
-	return oss.str();
-}

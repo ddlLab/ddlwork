@@ -20,12 +20,11 @@ public:
 		return oss.str();
 	}
 
-	friend std::ostream;
 
 	float cost = 0;
 	int tiraz = 0;
 	std::string autor;
 };
 
-
+std::ostream& operator<<(std::ostream& os, const Book& book);
 
