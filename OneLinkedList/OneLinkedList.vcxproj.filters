@@ -4,9 +4,11 @@
     <ClCompile Include="node.cpp" />
     <ClCompile Include="one_linked_list.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Book.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="node.h" />
     <ClInclude Include="one_linked_list.h" />
+    <ClInclude Include="Book.h" />
   </ItemGroup>
 </Project>
