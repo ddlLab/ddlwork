@@ -32,11 +32,11 @@ void test1()
     list.push_back(15);
     std::cout << list.ToString() << std::endl;
 
-    list.push_mid(21, 0);
+    list.pop_mid(21, 0);
     std::cout << list.ToString() << std::endl;
-    list.push_mid(22, 15);
+    list.pop_mid(22, 15);
     std::cout << list.ToString() << std::endl;
-    list.push_mid(23, 3);
+    list.pop_mid(23, 3);
     std::cout << list.ToString() << std::endl;
     while (list.Size() > 0)
     {
