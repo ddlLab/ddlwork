@@ -1,18 +1,20 @@
 #pragma once
+
 #include <string>
-#include "oll_node.h"
+#include "dll_node.h"
 
 
-namespace oll
+namespace dll
 {
-template <class T>
-	class OneLinkedList
+	template <class T>
+	class DoubleLinkedList
 	{
 	public:
 
 		size_t Size() const { return size; }
 		bool IsEmpty() const { return size == 0; }
 		std::string ToString() const;
+		std::string ToStringR() const;
 
 		void push_front(T val);
 		void push_back(T val);
@@ -27,7 +29,7 @@ template <class T>
 	};
 
 	template <class T>
-	std::string OneLinkedList<T>::ToString() const
+	std::string DoubleLinkedList<T>::ToString() const
 	{
 		std::ostringstream oss;
 		oss << size << ":[";
@@ -39,7 +41,7 @@ template <class T>
 		return oss.str();
 	}
 	template <class T>
-	void OneLinkedList<T>::push_front(T val)
+	void DoubleLinkedList<T>::push_front(T val)
 	{
 		if (size == 0)
 		{
@@ -49,11 +51,12 @@ template <class T>
 		else
 		{
 			head = new Node<T>(val, head);
+			head->Next()->Prev() = head;
 		}
 		++size;
 	}
 	template <class T>
-	void OneLinkedList<T>::push_back(T val)
+	void DoubleLinkedList<T>::push_back(T val)
 	{
 		if (size == 0)
 		{
@@ -62,38 +65,27 @@ template <class T>
 		}
 		else
 		{
-			tail->Next() = new Node<T>(val);
+			tail->Next() = new Node<T>(val, nullptr, tail);
 			tail = tail->Next();
 		}
 		++size;
 	}
-	template <class T>
-	void OneLinkedList<T>::push_mid(T val, size_t id)
-	{
-		if (id == 0 || IsEmpty())
-		{
-			push_front(val);
-			return;
-		}
 
-		if (id >= size)
-		{
-			push_back(val);
-			return;
-		}
-		size_t k = 0;
-		Node<T>* t = head;
-		while (k + 1 != id)
-		{
-			t = t->Next();
-			++k;
-		}
-		Node<T>* t1 = t->Next();
-		t->Next() = new Node<T>(val, t1);
-		++size;
-	}
 	template <class T>
-	void OneLinkedList<T>::pop_front()
+	std::string DoubleLinkedList<T>::ToStringR() const
+	{
+		std::ostringstream oss;
+		oss << size << ":[";
+		if (tail)
+		{
+			oss << tail->ToStringR();
+		}
+		oss << "]";
+		return oss.str();
+	}
+
+	template <class T>
+	void DoubleLinkedList<T>::pop_front()
 	{
 		if (size == 0)
 		{
@@ -108,13 +100,14 @@ template <class T>
 		{
 			Node<T>* t = head;
 			head = head->Next();
+			head->Prev() = nullptr;
 			t->Next() = nullptr;
 			delete t;
 		}
 		--size;
 	}
 	template <class T>
-	void OneLinkedList<T>::pop_back()
+	void DoubleLinkedList<T>::pop_back()
 	{
 		if (size == 0)
 		{
@@ -127,51 +120,14 @@ template <class T>
 		}
 		else
 		{
-			Node<T>* t = head;
-			while (t->Next() != tail)
-			{
-				t = t->Next();
-			}
-			delete tail;
-			t->Next() = nullptr;
-			tail = t;
+			Node<T>* t = tail;
+			tail = tail->Next();
+			tail->Next() = nullptr;
+			t->Prev() = nullptr;
+			delete t;
 		}
-		--size;
-	}
-	template <class T>
-	void OneLinkedList<T>::pop_mid(size_t pos)
-	{
-		if (size == 0)
-		{
-			return;
-		}
-		if (pos == 0)
-		{
-			pop_front();
-			return;
-		}
-		if (pos >= size)
-		{
-			pop_back();
-			return;
-		}
-		Node<T>* t = head;
-		size_t k = 0;
-		while (k != pos - 1)
-		{
-			t = t->Next();
-			++k;
-		}
-		Node<T>* del = t->Next();
-		if (del == tail)
-		{
-			tail = t;
-		}
-		t->Next() = del->Next();
-		del->Next() = nullptr;
-		delete del;
 		--size;
 	}
 
-}
-//namespace oll
+
+}//namespace dll

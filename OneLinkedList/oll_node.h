@@ -2,6 +2,10 @@
 #include <string>
 #include <sstream>
 
+namespace oll
+{
+
+
 template <class T>
 class Node
 {
@@ -37,3 +41,4 @@ std::string Node<T>::ToString() const
 	return oss.str();
 }
 
+} // namespace oll
