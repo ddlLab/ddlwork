@@ -30,7 +30,7 @@ namespace dll
 	};
 
 	template<class T>
-	Node<T>::Node(T _data, Node<T>* _next, Node<T>* _prev,)
+	Node<T>::Node(T _data, Node<T>* _next, Node<T>* _prev)
 		: data(_data)
 		, next(_next)
 		, prev(_prev)
