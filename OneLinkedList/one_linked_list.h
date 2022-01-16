@@ -1,7 +1,10 @@
 #pragma once
 
 #include <string>
-#include "node.h"
+#include "oll_node.h"
+
+namespace oll
+{
 
 template <class T>
 class OneLinkedList
@@ -171,3 +174,5 @@ void OneLinkedList<T>::pop_mid(size_t pos)
 	delete del;
 	size--;
 }
+
+} //namespace oll
