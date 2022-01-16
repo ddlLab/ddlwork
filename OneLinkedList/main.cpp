@@ -2,6 +2,7 @@
 #include "one_linked_list.h"
 #include "book.h"
 
+
 void test1();
 void test2();
 void test3();
@@ -14,7 +15,7 @@ int main()
 }
 void test1()
 {
-    OneLinkedList<int> list;
+    oll::OneLinkedList<int> list;
     std::cout << list.ToString() << std::endl;
     list.push_back(10);
     std::cout << list.ToString() << std::endl;
@@ -42,7 +43,7 @@ void test1()
 }
 void test2()
 {
-    OneLinkedList<float> list;
+    oll::OneLinkedList<float> list;
     std::cout << list.ToString() << std::endl;
     list.push_back(10.2);
     std::cout << list.ToString() << std::endl;
@@ -69,7 +70,7 @@ void test2()
 }
     void test3() 
     {
-        OneLinkedList<Book> list;
+        oll::OneLinkedList<Book> list;
         std::cout << list.ToString() << std::endl;
         list.push_back({ "test1",100,12.5 });
         std::cout << list.ToString() << std::endl;

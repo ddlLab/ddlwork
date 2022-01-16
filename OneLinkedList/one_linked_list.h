@@ -1,6 +1,11 @@
 #pragma once
 #include <string>
-#include "node.h"
+#include "oll_node.h"
+
+namespace oll
+{
+
+
 
 
 
@@ -199,3 +204,4 @@ void OneLinkedList<T>::push_mid(T val, size_t pos)
 
 
 }
+}//namespace oll
