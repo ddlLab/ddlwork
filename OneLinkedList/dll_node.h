@@ -59,7 +59,7 @@ std::string Node<T>::ToStringR() const
 	oss << data << " ";
 	if (!IsFirst())
 	{
-		oss << prev->ToString();
+		oss << prev->ToStringR();
 	}
 	return oss.str();
 }
