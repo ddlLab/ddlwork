@@ -141,10 +141,12 @@
   <ItemGroup>
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="Book.h" />
     <ClInclude Include="dll_node.h" />
     <ClInclude Include="double_linked_list.h" />
-    <ClInclude Include="node.h" />
+    <ClInclude Include="oll_node.h" />
     <ClInclude Include="one_linked_list.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
