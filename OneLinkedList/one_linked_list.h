@@ -5,9 +5,6 @@
 
 namespace oll
 {
-
-
-
 	template<class T>
 	class OneLinkedList
 	{

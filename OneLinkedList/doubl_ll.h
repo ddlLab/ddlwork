@@ -68,7 +68,7 @@ namespace dll
 		else
 		{
 			head = new Node<T>(val, head);
-			hrad->Next()->Prev() = head;
+			head->Next()->Prev() = head;
 		}
 		size++;
 	}
@@ -132,5 +132,50 @@ namespace dll
 		}
 		size--;
 	}
+
+	template<class T>
+	void DoublLinkedList<T>::pop_mid(size_t pos)
+	{
+		if (size == 0)
+			return;
+		if (pos == 0)
+		{
+			pop_front();
+			return;
+		}
+		if (pos >= size)
+		{
+			pop_back();
+			return;
+		}
+		else
+		{
+			Node<T>* t = head;
+			head = head->Next();
+			head->Prev() = nullptr;
+			t->Next() = nullptr;
+			delete t;
+		}
+
+		template<class T>
+		void DoublLinkedList<T>::push_mid(T val, size_t pos)
+		{
+			if (pos == 0)
+			{
+				push_front(val);
+				return;
+			}
+			if (pos > Size())
+			{
+				push_back(val);
+				return;
+			}
+
+			else
+			{
+				head = new Node<T>(val, head);
+				head->Next()->Prev() = head;
+			}
+			size++;
 
 }//namespace dll
