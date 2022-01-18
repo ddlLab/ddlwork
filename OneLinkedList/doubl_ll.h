@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "node_oll.h"
+#include "dll_node.h"
 
 namespace dll
 {
@@ -125,12 +125,44 @@ namespace dll
 		else
 		{
 			Node<T>* t = tail;
-			head = tail->Prev();
-			head->Next() = nullptr;
-			t->Prev() = nullptr;
-			delete t;
+			t = tail->Prev();
+			t->Next() = nullptr;
+			tail->Prev() = nullptr;
+			delete tail;
+			tail = t;
 		}
 		size--;
+	}
+
+	template<class T>
+	void DoublLinkedList<T>::push_mid(T val, size_t pos)
+	{
+		if (pos == 0)
+		{
+			push_front(val);
+			return;
+		}
+		if (pos > Size())
+		{
+			push_back(val);
+			return;
+		}
+
+		Node<T>* t = head;
+		size_t k = 0;
+		while (k != pos - 1)
+		{
+			t = t->Next();
+			k++;
+		}
+		Node<T>* t1 = t->Next();
+		Node<T>* item = new Node<T>(val, t1, t); //1-2
+		t->Next() = item; // 3
+		if (t1)
+		{
+		   t1->Prev() = item; // 4
+		}
+		size++;
 	}
 
 	template<class T>
@@ -148,34 +180,30 @@ namespace dll
 			pop_back();
 			return;
 		}
-		else
+
+		Node<T>* t = head;
+		size_t k = 0;
+		while (k != pos - 1)
 		{
-			Node<T>* t = head;
-			head = head->Next();
-			head->Prev() = nullptr;
-			t->Next() = nullptr;
-			delete t;
+			t = t->Next();
+			k++;
 		}
-
-		template<class T>
-		void DoublLinkedList<T>::push_mid(T val, size_t pos)
+		Node<T>* del = t->Next();
+		Node<T>* t1 = del->Next();
+		t->Next() = t1;
+		del->Prev() = nullptr;
+		if (del == tail)
 		{
-			if (pos == 0)
-			{
-				push_front(val);
-				return;
-			}
-			if (pos > Size())
-			{
-				push_back(val);
-				return;
-			}
+			tail = t;
+		}
+		else if (t1)
+		{
+			t1->Prev() = t;
+		}
+		del->Next() = nullptr;
+		delete del;
+		size--;
 
-			else
-			{
-				head = new Node<T>(val, head);
-				head->Next()->Prev() = head;
-			}
-			size++;
+	}
 
 }//namespace dll
