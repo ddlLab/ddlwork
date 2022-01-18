@@ -127,4 +127,73 @@ void DoubleLinkedList<T>::pop_back()
 	size--;
 }
 
+template <class T>
+void DoubleLinkedList<T>::push_mid(T val, size_t pos)
+{
+	if (pos == 0)
+	{
+		push_front(val);
+		return;
+	}
+	if (pos > Size())
+	{
+		push_back(val);
+		return;
+	}
+	Node<T>* t = head;
+	size_t k = 0;
+	while (k != pos - 1)
+	{
+		t = t->Next();
+		k++;
+	}
+	Node<T>* t1 = t->Next();
+	Node<T>* item = new Node<T>(val, t1, t);
+	item->Next() = item;
+	if (t1)
+	{
+		t1->Prev() = item;
+	}
+	size++;
+}
+
+template <class T>
+void DoubleLinkedList<T>::pop_mid(size_t pos)
+{
+	if (size == 0)
+		return;
+	if (pos == 0)
+	{
+		pop_front();
+		return;
+	}
+	if (pos >= size)
+	{
+		pop_back();
+		return;
+	}
+
+	Node<T>* t = head;
+	size_t k = 0;
+	while (k != pos - 1)
+	{
+		t = t->Next();
+		k++;
+	}
+	Node<T>* del = t->Next();
+	Node<T>* t1 = del->Next();
+	t->Next() = t1;
+	del->Prev() = nullptr;
+	if (del == tail)
+	{
+		tail = t;
+	}
+	else
+	{
+		t1->Prev() = t;
+	}
+	del->Next() = nullptr;
+	delete del;
+	size--;
+}
 }//namespace dll
