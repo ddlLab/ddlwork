@@ -1,5 +1,5 @@
 #pragma once
-#include "oll_node.h"
+#include "dll_node.h"
 #include <string>
 #include <sstream>
 namespace dll
@@ -15,7 +15,7 @@ namespace dll
 
 		void push_front(T val);
 		void push_back(T val);
-		void pop__front();
+		void pop_front();
 		void pop_back();
 		void pop_mid(size_t pos);
 		void push_mid(T val, size_t pos);
@@ -44,9 +44,9 @@ namespace dll
 	{
 		std::ostringstream oss;
 		oss << size << ":[";
-		if (head)
+		if (tail)
 		{
-			oss << tail->ToString();
+			oss << tail->ToStringR();
 		}
 		oss << "]";
 		return oss.str();
@@ -64,7 +64,7 @@ namespace dll
 		{
 
 			head = new Node<T>(val, head);
-			head - < Next()->() = head;
+			head->Next()->Prev() = head;
 		}
 		size++;
 	}
@@ -78,7 +78,7 @@ namespace dll
 		}
 		else
 		{
-			tail->Next() = new Node<T>(val,nullptr,tail);
+			tail->Next() = new Node<T>(val, nullptr, tail);
 			tail = tail->Next();
 
 
@@ -86,7 +86,7 @@ namespace dll
 		size++;
 	}
 	template <class T>
-	void DoubleLinkedList<T>::pop__front()
+	void DoubleLinkedList<T>::pop_front()
 	{
 		if (size == 0)
 		{
@@ -127,17 +127,96 @@ namespace dll
 		}
 		else
 		{
-			{
-				Node<T>* t = head;
+			
+				Node<T>* t = tail;
 
-				tail = tail->Next();
+				tail = tail->Prev();
 				tail->Next() = nullptr;
 				t->Prev() = nullptr;
 				delete t;
-			}
+			
 
 		}
 		size--;
+	}
+	template <class T>
+	void DoubleLinkedList<T>::push_mid(T val, size_t pos)
+
+	{
+		if (pos == 0)
+		{
+			push_front(val);
+			return;
+		}
+		if (pos > Size())
+		{
+			push_back(val);
+			return;
+		}
+		Node<T>* t = head;
+		size_t k = 0;
+		while (k != pos - 1)
+		{
+			t = t->Next();
+			k++;
+		}
+		Node<T>* t1 = t->Next();
+		Node<T>* item = new Node<T>(val, t1, t);//1-2
+		t->Next() = item;//3
+		if (t1)
+		{
+		t1->Prev() = item;//4
+
+		}
+		size++;
 
 	}
+	template <class T>
+	void DoubleLinkedList<T>::pop_mid(size_t pos)
+	{
+		if (size == 0)
+		{
+			return;
+
+		}
+		if (size == 1)
+		{
+			pop_front();
+			return;
+
+
+		}
+		if (pos >= size)
+		{
+			pop_back();
+			return;
+
+		}
+		Node<T>* t = head;
+		size_t k = 0;
+		while (k != pos - 1)
+		{
+			t = t->Next();
+			k++;
+		}
+		Node<T>* del = t->Next();
+		Node<T>* t1 = del->Next();
+		t->Next() = t1;
+		del->Prev() = nullptr;
+		if (del == tail)
+		{
+			tail = t;
+
+		}
+		else if(t1)
+		{
+			t1->Prev() = t;
+		}
+		del->Next() = nullptr;
+		delete del;
+		size--;
+
+		
+	}
+
 }//namespace dll
