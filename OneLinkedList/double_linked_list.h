@@ -121,11 +121,83 @@ namespace dll
 		else
 		{
 			Node<T>* t = tail;
-			tail = tail->Next();
+			tail = tail->Prev();
 			tail->Next() = nullptr;
 			t->Prev() = nullptr;
 			delete t;
 		}
+		--size;
+	}
+
+	template <class T>
+	void DoubleLinkedList<T>::push_mid(T val, size_t id)
+	{
+		if (id == 0 || IsEmpty())
+		{
+			push_front(val);
+			return;
+		}
+
+		if (id >= size)
+		{
+			push_back(val);
+			return;
+		}
+		size_t k = 0;
+		Node<T>* t = head;
+		while (k + 1 != id)
+		{
+			t = t->Next();
+			++k;
+		}
+		Node<T>* t1 = t->Next();
+		Node<T>* item = new Node<T>(val, t1, t); // 1-2
+		t->Next() = item; //3
+		if (t1)
+		{
+			t1->Prev() = item;
+		}
+		++size;
+	}
+
+	template <class T>
+	void DoubleLinkedList<T>::pop_mid(size_t pos)
+	{
+		if (size == 0)
+		{
+			return;
+		}
+		if (pos == 0)
+		{
+			pop_front();
+			return;
+		}
+		if (pos >= size)
+		{
+			pop_back();
+			return;
+		}
+		Node<T>* t = head;
+		size_t k = 0;
+		while (k != pos - 1)
+		{
+			t = t->Next();
+			++k;
+		}
+		Node<T>* del = t->Next();
+		Node<T>* t1 = del->Next();
+		t->Next() = t1;
+		del->Prev() = nullptr;
+		if (del == tail)
+		{
+			tail = t;
+		}
+		else
+		{
+			t1->Prev() = t;
+		}
+		del->Next() = nullptr;
+		delete del;
 		--size;
 	}
 
