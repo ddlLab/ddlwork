@@ -144,10 +144,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Book.h" />
+    <ClInclude Include="Dequeue.h" />
     <ClInclude Include="dll_node.h" />
     <ClInclude Include="double_linked_list.h" />
     <ClInclude Include="oll_node.h" />
     <ClInclude Include="one_linked_list.h" />
+    <ClInclude Include="queue.h" />
+    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

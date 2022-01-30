@@ -149,7 +149,7 @@ void DoubleLinkedList<T>::push_mid(T val, size_t pos)
 	}
 	Node<T>* t1 = t->Next();
 	Node<T>* item = new Node<T>(val, t1, t);
-	item->Next() = item;
+	t->Next() = item;
 	if (t1)
 	{
 		t1->Prev() = item;
