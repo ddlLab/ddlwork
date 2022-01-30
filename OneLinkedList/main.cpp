@@ -156,11 +156,23 @@ void test6()
 {
     dll::DoubleLinkedList<int> list;
     list.push_mid(5, 2);
+    std::cout << list.ToString() << std::endl;
+    std::cout << list.ToStringR() << std::endl;
     list.push_mid(6, 2);
+    std::cout << list.ToString() << std::endl;
+    std::cout << list.ToStringR() << std::endl;
     list.push_mid(7, 2);
+    std::cout << list.ToString() << std::endl;
+    std::cout << list.ToStringR() << std::endl;
     list.push_mid(8, 2);
+    std::cout << list.ToString() << std::endl;
+    std::cout << list.ToStringR() << std::endl;
     list.push_mid(9, 2);
+    std::cout << list.ToString() << std::endl;
+    std::cout << list.ToStringR() << std::endl;
     list.push_mid(10, 2);
+    std::cout << list.ToString() << std::endl;
+    std::cout << list.ToStringR() << std::endl;
     while (list.Size() > 0)
     {
         std::cout << list.ToString() << std::endl;
