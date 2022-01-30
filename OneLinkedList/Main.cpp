@@ -1,6 +1,8 @@
 #include <iostream>
 #include "one_linked_list.h"
 #include "double_linked_list.h"
+#include "queue.h"
+#include "stack.h"
 #include "book.h"
 
 
@@ -11,15 +13,19 @@ void test3();
 void test4();
 void test5();
 void test6();
+void test7();
+void test8();
 
 int main()
 {
 	//test1();
 	//test2();
 	//test3();
-	test4();
-	test5();
-	test6();
+	//test4();
+	//test5();
+	//test6();
+	//test7();
+	test8();
 	return 0;
 }
 
@@ -163,4 +169,36 @@ void test6()
 	}
 	std::cout << list.ToString() << std::endl;
 	std::cout << list.ToStringR() << std::endl;
+}
+
+void test7()
+{
+	Queue<int> q1;
+	q1.push(5);
+	q1.push(6);
+	q1.push(7);
+	q1.push(8);
+	q1.push(9);
+	q1.push(10);
+	while (q1.Size() > 0)
+	{
+		std::cout << q1.ToString() << std::endl;
+		q1.pop();
+	}
+}
+
+void test8()
+{
+	Stack<int> st1;
+	st1.push(5);
+	st1.push(6);
+	st1.push(7);
+	st1.push(8);
+	st1.push(9);
+	st1.push(10);
+	while (st1.Size() > 0)
+	{
+		std::cout << st1.ToString() << std::endl;
+		st1.pop();
+	}
 }
