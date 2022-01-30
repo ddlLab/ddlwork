@@ -120,7 +120,7 @@ namespace dll
 		{
 			delete head;
 			head = tail = nullptr;
-
+     
 		}
 		else
 		{
@@ -142,7 +142,7 @@ namespace dll
 			push_front(val);
 			return;
 		}
-		if (pos > Size())
+		if (pos >= Size())
 		{
 			push_back(val);
 			return;

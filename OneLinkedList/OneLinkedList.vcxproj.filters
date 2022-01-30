@@ -38,5 +38,14 @@
     <ClInclude Include="doubl_ll.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Queueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dequeue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
