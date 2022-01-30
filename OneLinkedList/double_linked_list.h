@@ -138,7 +138,7 @@ void DoubleLinkedList<T>::push_mid(T val, size_t pos)
 		push_front(val);
 		return;
 	}
-	if (pos > Size())
+	if (pos >= Size())
 	{
 		push_back(val);
 		return;
@@ -158,6 +158,7 @@ void DoubleLinkedList<T>::push_mid(T val, size_t pos)
 	{
 		t1->Prev() = item; //4
 	}
+	
 	size++;
 }
 
