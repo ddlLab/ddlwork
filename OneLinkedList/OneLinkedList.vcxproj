@@ -148,6 +148,8 @@
     <ClInclude Include="double_linked_list.h" />
     <ClInclude Include="oll_node.h" />
     <ClInclude Include="one_linked_list.h" />
+    <ClInclude Include="Queue.h" />
+    <ClInclude Include="Stak.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

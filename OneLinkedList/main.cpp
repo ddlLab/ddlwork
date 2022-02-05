@@ -1,16 +1,28 @@
 #include <iostream>
 #include "one_linked_list.h"
 #include "Book.h"
+#include "double_linked_list.h"
+#include "Queue.h"
+#include "Stak.h"
 
 void test1();
 void test2();
 void test3();
-
+void test4();
+void test5();
+void test6();
+void test7();
+void test8();
 int main()
 {
-    test1();
-    test2();
-    test3();
+    //test1();
+    //test2();
+    //test3();
+    //test4();
+    //test5();
+    //test6();
+    //test7();
+    test8();
     return 0;
 }
 
@@ -80,7 +92,7 @@ void test3()
 {
     oll::OneLinkedList<Book> list;
     std::cout << list.ToString() << std::endl;
-    list.push_back({"test1",100, 12.5});
+    list.push_back({ "test1",100, 12.5 });
     std::cout << list.ToString() << std::endl;
     list.push_back({ "test2",90, 12.5 });
     std::cout << list.ToString() << std::endl;
@@ -105,3 +117,89 @@ void test3()
         std::cout << list.ToString() << std::endl;
     }
 }
+
+void test4()
+{
+    dll::List<int> list;
+    for (int i = 0; i < 10; ++i)
+    {
+    std::cout << list.ToString() << std::endl;
+    std::cout << list.ToStringR() << std::endl;
+    list.push_back(i);
+
+    }
+    while (list.Size() > 0)
+    {
+        std::cout << list.ToString() << std::endl;
+        std::cout << list.ToStringR() << std::endl;
+        list.pop_back();
+    }
+}
+
+void test5()
+{
+    dll::List<float> list;
+    for (float i = 0; i < 10; ++i)
+    {
+        std::cout << list.ToString() << std::endl;
+        std::cout << list.ToStringR() << std::endl;
+        list.push_front(i+0.5);
+
+    }
+    while (list.Size() > 0)
+    {
+        std::cout << list.ToString() << std::endl;
+        std::cout << list.ToStringR() << std::endl;
+        list.pop_front();
+    }
+}
+
+void test6()
+{
+    dll::List<int> list;
+    for (int i = 0; i < 10; ++i)
+    {
+        std::cout << list.ToString() << std::endl;
+        std::cout << list.ToStringR() << std::endl;
+        list.push_mid(i, 2);
+
+    }
+    while (list.Size() > 0)
+    {
+        std::cout << list.ToString() << std::endl;
+        std::cout << list.ToStringR() << std::endl;
+        list.pop_mid(3);
+    }
+}
+    void test7()
+    {
+        dll::Queue <int> queue;
+        for (int i = 0; i < 10; ++i)
+        {
+            std::cout << queue.ToString() << std::endl;
+            queue.push(i);
+
+        }
+        while (queue.Size() > 0)
+        {
+            std::cout << queue.ToString() << std::endl;
+            queue.pop();
+        }
+    }
+
+    void test8()
+    {
+        dll::Stak <int> stak;
+        for (int i = 0; i < 10; ++i)
+        {
+            std::cout << stak.ToString() << std::endl;
+            stak.push(i);
+
+        }
+        while (stak.Size() > 0)
+        {
+            std::cout << stak.ToString() << std::endl;
+            stak.pop();
+        }
+    }
+

@@ -10,5 +10,7 @@
     <ClInclude Include="Book.h" />
     <ClInclude Include="dll_node.h" />
     <ClInclude Include="double_linked_list.h" />
+    <ClInclude Include="Queue.h" />
+    <ClInclude Include="Stak.h" />
   </ItemGroup>
 </Project>
