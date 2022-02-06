@@ -4,7 +4,7 @@
 #include "queue.h"
 #include "stack.h"
 #include "Book.h"
-
+#include "set1.h"
 void test1();
 void test2();
 void test3();
@@ -196,12 +196,18 @@ void test7()
 
 void test8()
 {
-    Stack<int> st1;
+    dll::Set<int> st1;
     st1.push(5);
     st1.push(6);
     st1.push(7);
+    st1.push(7);
+    std::cout << st1.ToString() << std::endl;
     st1.push(8);
+    st1.push(8);
+    std::cout << st1.ToString() << std::endl;
     st1.push(9);
+    st1.push(9);
+    std::cout << st1.ToString() << std::endl;
     st1.push(10);
     while (st1.Size() > 0)
     {
