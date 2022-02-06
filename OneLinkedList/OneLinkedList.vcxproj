@@ -150,6 +150,7 @@
     <ClInclude Include="double_linked_list.h" />
     <ClInclude Include="oll_node.h" />
     <ClInclude Include="one_linked_list.h" />
+    <ClInclude Include="set1.h" />
     <ClInclude Include="stack.h" />
   </ItemGroup>
   <ItemGroup>
