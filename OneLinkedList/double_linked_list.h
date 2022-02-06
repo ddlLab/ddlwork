@@ -21,11 +21,36 @@ public:
 	void pop_front();
 	void pop_back();
 	void pop_mid(size_t pos);
+
+	bool Has(T val) const;
 private:
 	Node<T>* head = nullptr;
 	Node<T>* tail = nullptr;
 	size_t size = 0;
 };
+
+template <class T>
+bool DoubleLinkedList<T>::Has(T val) const
+{
+	if (size == 0)
+	{
+		return false;
+	}
+	Node<T>* nextNode = head;
+	Node<T>* prevNode = tail;
+	size_t pos	  = 0;
+	while (pos <= size / 2)
+	{
+		if (nextNode->Data() == val || prevNode->Data() == val)
+		{
+			return true;
+		}
+		nextNode = nextNode->Next();
+		prevNode = prevNode->Prev();
+		pos++;
+	}
+	return false;
+}
 
 
 template <class T>

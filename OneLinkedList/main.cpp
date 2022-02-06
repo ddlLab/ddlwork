@@ -3,6 +3,7 @@
 #include "double_linked_list.h"
 #include "queue.h"
 #include "stack.h"
+#include "set1.h"
 #include "Book.h"
 
 void test1();
@@ -13,6 +14,7 @@ void test5();
 void test6();
 void test7();
 void test8();
+void test9();
 
 int main()
 {
@@ -23,7 +25,8 @@ int main()
     //test5();
     //test6();
     //test7();
-    test8();
+    //test8();
+    test9();
     return 0;
 }
 
@@ -199,6 +202,28 @@ void test8()
     Stack<int> st1;
     st1.push(5);
     st1.push(6);
+    st1.push(7);
+    st1.push(8);
+    st1.push(9);
+    st1.push(10);
+    while (st1.Size() > 0)
+    {
+        std::cout << st1.ToString() << std::endl;
+        st1.pop();
+    }
+}
+
+void test9()
+{
+    dll::Set<int> st1;
+    st1.push(5);
+    st1.push(5);
+    st1.push(5);
+    st1.push(6);
+    st1.push(6);
+    st1.push(6);
+    st1.push(7);
+    st1.push(7);
     st1.push(7);
     st1.push(8);
     st1.push(9);
