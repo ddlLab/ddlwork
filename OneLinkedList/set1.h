@@ -2,8 +2,10 @@
 
 #include "double_linked_list.h"
 
+namespace dll
+{
 template <class T>
-class Stack : private dll::DoubleLinkedList<T>
+class Set : private dll::DoubleLinkedList<T>
 {
 	using Parent = dll::DoubleLinkedList<T>;
 public:
@@ -11,6 +13,11 @@ public:
 	std::string ToString() const { return Parent::ToString(); }
 	std::string ToStringR() const { return Parent::ToStringR(); }
 
-	void push(T val) { Parent::push_back(val); }
-	void pop()		 { Parent::pop_back(); }
+	void push(T val) 
+	{
+		if(!Parent::Has(val)) 
+			Parent::push_back(val);
+	}
+	void pop() { Parent::pop_back(); }
 };
+}

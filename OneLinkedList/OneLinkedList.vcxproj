@@ -150,6 +150,7 @@
     <ClInclude Include="oll_node.h" />
     <ClInclude Include="one_linked_list.h" />
     <ClInclude Include="queue.h" />
+    <ClInclude Include="set1.h" />
     <ClInclude Include="Stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

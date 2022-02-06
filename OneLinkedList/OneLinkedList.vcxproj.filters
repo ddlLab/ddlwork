@@ -13,5 +13,6 @@
     <ClInclude Include="queue.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="Dequeue.h" />
+    <ClInclude Include="set1.h" />
   </ItemGroup>
 </Project>
