@@ -50,5 +50,8 @@
     <ClInclude Include="dequeue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="set1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
