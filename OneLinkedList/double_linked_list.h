@@ -21,12 +21,37 @@ public:
 	void pop_front();
 	void pop_back();
 	void pop_mid(size_t pos);
+
+	bool Has(T val) const;
+
 private:
 	Node<T>* head = nullptr;
 	Node<T>* tail = nullptr;
 	size_t size = 0;
 };
 
+template <class T>
+bool DoubleLinkedList<T>::Has(T val) const
+{
+	if (size == 0)
+	{
+		return false;
+	}
+	Node<T>* nextNode = head;
+	Node<T>* prevNode = tail;
+	size_t pos = 0;
+	while (pos <= size / 2)
+	{
+		if (nextNode->Data() == val || prevNode->Data() == val)
+		{
+			return true;
+		}
+		nextNode = nextNode->Next();
+		prevNode = prevNode->Prev();
+		pos++;
+	}
+	return false;
+}
 
 template <class T>
 std::string DoubleLinkedList<T>::ToString() const
@@ -78,7 +103,7 @@ void DoubleLinkedList<T>::push_mid(T val, size_t pos)
 		push_front(val);
 		return;
 	}
-	if (pos > Size())
+	if (pos >= Size())
 	{
 		push_back(val);
 		return;
@@ -165,7 +190,7 @@ void DoubleLinkedList<T>::pop_mid(size_t pos)
 	Node<T>* del = t->Next();
 	Node<T>* t1 = del->Next();
 	t->Next() = t1;
-	//del->Prev() = nullptr;
+	del->Prev() = nullptr;
 	if (del == tail)
 	{
 		tail = t;

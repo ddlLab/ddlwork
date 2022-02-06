@@ -26,6 +26,7 @@
 *.a
 *.lib
 *.log
+*.pdb
 
 # Executables
 *.exe
@@ -40,5 +41,6 @@
 /OneLinkedList/OneLinkedList.vcxproj.user
 /OneLinkedList/.vs
 /OneLinkedList/Debug/
-/OneLinkedList/x64/Debug/
+/OneLinkedList/x64/
 
+/OneLinkedList/x64/Debug/vc142.idb
