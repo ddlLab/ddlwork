@@ -43,10 +43,11 @@ bool  DoubleLinkedList<T>::Has(T val) const
 	{
 		if (nextNode->Data() == val || prevNode->Data() == val)
 			return true;
+		nextNode = nextNode->Next();
+		prevNode = prevNode->Prev();
+		pos++;
 	}
-	nextNode = nextNode->Next();
-	nextNode = prevNode->Prev();
-	pos++;
+
 	return false;
 }
 

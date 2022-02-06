@@ -18,7 +18,8 @@ public:
 		oss << "{" << autor << "," << cost << "," << tiraz << "}";
 		return oss.str();
 	}
-
+	bool operator == (const Book& o) const { return autor == o.autor; }
+	bool operator!=(const Book& o) const { return !operator==(o); }
 	float cost = 0;
 	int tiraz = 0;
 	std::string autor;

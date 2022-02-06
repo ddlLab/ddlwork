@@ -13,7 +13,7 @@ void test5();
 void test6();
 void test7();
 void test8();
-
+void test10();
 int main()
 {
     //test1();
@@ -23,7 +23,8 @@ int main()
     //test5();
     //test6();
     //test7();
-    test8();
+    //test8();
+    test10();
     return 0;
 }
 
@@ -209,6 +210,26 @@ void test8()
     st1.push(9);
     std::cout << st1.ToString() << std::endl;
     st1.push(10);
+    while (st1.Size() > 0)
+    {
+        std::cout << st1.ToString() << std::endl;
+        st1.pop();
+    }
+}
+
+void test10()
+{
+    dll::Set<Book> st1;
+    Book book1 = Book("t1", 12, 45);
+    st1.push(book1);
+    book1.autor = "t2";
+    st1.push(book1);
+    book1.cost = 74;
+    st1.push(book1);
+    book1.tiraz = 74;
+    st1.push(book1);
+    Book book2 ("t1", 12, 45);
+    st1.push(book2);
     while (st1.Size() > 0)
     {
         std::cout << st1.ToString() << std::endl;
