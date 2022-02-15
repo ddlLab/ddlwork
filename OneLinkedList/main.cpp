@@ -5,6 +5,8 @@
 #include "stack.h"
 #include "set1.h"
 #include "book.h"
+#include "treeh.h"
+#include "treeh.h"
 
 
 void test1();
@@ -17,6 +19,7 @@ void test7();
 void test8();
 void test9();
 void test10();
+void test11();
 int main()
 {
     // test1();
@@ -28,7 +31,8 @@ int main()
    // test7();
     //test8();
     //test9();
-    test10();
+   /// test10();
+    test11();
 
    
     return 0;
@@ -244,6 +248,22 @@ void test2()
                   std::cout << s1.ToString() << std::endl;
                   s1.pop();
               }
+          }
+          void test11()
+          {
+              tree::Tree<int> tr1;
+              tr1.Add(45);
+              tr1.Add(65);
+              tr1.Add(45);
+              tr1.Add(65);
+              tr1.Add(78);
+              tr1.Add(11);
+              tr1.Add(23);
+              tr1.Add(56);
+               
+                  std::cout << tr1.ToString() << std::endl;
+                  std::cout << tr1.Has(25) << std::endl;
+                  std::cout << tr1.Has(21) << std::endl;
           }
 
       

@@ -47,6 +47,12 @@
     <ClInclude Include="set1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="tree_node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="treeh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="queue.h" />
