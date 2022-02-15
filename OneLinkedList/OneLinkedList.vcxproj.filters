@@ -14,5 +14,7 @@
     <ClInclude Include="Stack.h" />
     <ClInclude Include="Dequeue.h" />
     <ClInclude Include="set1.h" />
+    <ClInclude Include="tree_node.h" />
+    <ClInclude Include="tree.h" />
   </ItemGroup>
 </Project>
