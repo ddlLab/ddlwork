@@ -153,6 +153,8 @@
     <ClInclude Include="queue.h" />
     <ClInclude Include="set1.h" />
     <ClInclude Include="stack.h" />
+    <ClInclude Include="tree.h" />
+    <ClInclude Include="tree_node.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
