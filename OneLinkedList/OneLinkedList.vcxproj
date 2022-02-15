@@ -143,6 +143,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="3node.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="dequeue.h" />
     <ClInclude Include="dll_node.h" />
@@ -152,6 +153,7 @@
     <ClInclude Include="queue.h" />
     <ClInclude Include="set1.h" />
     <ClInclude Include="stack.h" />
+    <ClInclude Include="tree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
