@@ -269,4 +269,7 @@ void test11()
 	std::cout << tr1.ToString() << std::endl;
 	std::cout << tr1.Has(25) << std::endl;
 	std::cout << tr1.Has(21) << std::endl;
+	tr1.Drop(25);
+	std::cout << tr1.ToString() << std::endl;
+
 }

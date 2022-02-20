@@ -2,6 +2,7 @@
 
 #include <string>
 #include <sstream>
+#include <vector>
 
 namespace tree
 {
@@ -10,6 +11,8 @@ namespace tree
 	class Node
 	{
 		public:
+
+			~Node();
 		Node(T data, Node<T>* left = nullptr, Node<T>* right = nullptr);
 
 		Node<T>*& Next() { return left; }
@@ -27,11 +30,42 @@ namespace tree
 
 		bool Has(const T& data) const;
 		bool Add(T data);
+
+		void ToVector(std::vector<T>& result) const;
 	private:
 		Node<T>* left = nullptr;
 		Node<T>* right = nullptr;
 		T data;
 	};
+
+template <class T>
+void Node<T>::ToVector(std::vector<T>& result) const
+{
+	if (left)
+	{
+		left->ToVector(result);
+	}
+	result.push_back(data);
+	if (right)
+	{
+		right->ToVector(result);
+	}
+}
+
+	template<class T>
+	Node<T>::~Node()
+	{
+		if (left)
+		{
+			delete left;
+			left = nullptr;
+		}
+		if (right)
+		{
+			delete right;
+			right = nullptr;
+		}
+	}
 
 	template<class T>
 	Node<T>::Node(T _data, Node<T>* _left, Node<T>* _right)
