@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "one_linked_list.h"
 #include "double_linked_list.h"
 #include "queue.h"
@@ -6,7 +7,7 @@
 #include "set1.h"
 #include "book.h"
 #include "treeh.h"
-#include "treeh.h"
+
 
 
 void test1();
@@ -264,6 +265,11 @@ void test2()
                   std::cout << tr1.ToString() << std::endl;
                   std::cout << tr1.Has(25) << std::endl;
                   std::cout << tr1.Has(21) << std::endl;
+
+              
+                  tr1.Drop(56);
+                  std::cout << tr1.ToString() << std::endl;
+
           }
 
       

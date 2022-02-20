@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <sstream>
+#include <vector>
 
 namespace tree
 {
@@ -10,8 +11,10 @@ namespace tree
 
 	public:
 		Node(T data, Node<T>* next = nullptr, Node<T>* prev = nullptr);
+		~Node();
 		Node<T>*& Left() { return left; }
 		Node<T>*& Right() { return right; }
+
 		const Node<T>* Left() const { return left; }
 		const Node<T>* Right() const { return right; }
 
@@ -26,11 +29,41 @@ namespace tree
 		bool Has(const T& data) const;
 		bool Add(T data);
 
+		void ToVector(std::vector<T>& result)const;
+
 	private:
 		Node<T>* left = nullptr;
 		Node<T>* right = nullptr;
 		T data;
 	};
+	template<class T>
+	Node<T>::~Node()
+	{
+		if (left)
+		{
+			delete left;
+			left = nullptr;
+			
+		}
+		if (right)
+		{
+			delete right;
+			right = nullptr;
+		}
+	}
+	template<class T>
+	void Node<T>::ToVector(std::vector<T>& result)const
+	{
+		if (left)
+		{
+			left->ToVector(result);
+		}
+		result.push_back(data);
+		if (right)
+		{
+			right ->ToVector(result);
+		}
+	}
 
 			template<class T>
 			bool Node<T>:: Has(const T& _data) const
